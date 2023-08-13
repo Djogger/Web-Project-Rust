@@ -7,7 +7,7 @@ extern crate rocket;
 use rocket::form::Form;
 use rocket::response::content;
 use rocket::fs::{relative, FileServer};
-use rocket::State;
+//use rocket::State;
 //use std::sync::{Arc, Mutex};
 
 #[derive(FromForm)]
@@ -24,7 +24,7 @@ fn message(message_form: Form<Message>/*, saved_message: &State<Arc<Mutex<Option
     content::RawHtml(response)
 }
 
-/* Здесь Я хочу показать, что необязательно преобразовывать текст из response HTML тип.
+/* Здесь Я хочу показать, что необязательно преобразовывать текст из response в HTML тип.
 
 #[post("/message", data = "<message_form>")]
 fn message(message_form: Form<Message>) -> String {
