@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Web-Chat</title>
+
+    <style>
+        #Header {
+            background-color: red;
+            color: yellow;
+            padding: 25px;
+            text-align: center;
+        }
+    </style>
+
+    <script src="/script.js" charset="utf-8" defer></script>
+</head>
+<body>
+
+    <h2 id="Header">Проект: Веб-сервер с чатом.</h2>
+
+    <main>
+      <div id="sidebar">
+        <div id="status" class="pending"></div>
+
+        <div id="room-list">
+          <template id="room"> <!--В Тег template будут добавляться еще кнопки с классом "room"-->
+            <button class="room"></button>
+          </template>
+        </div>
+
+        <form id="new-room">                   <!--autocomplete с off отключает отображение подсказок.-->
+          <input type="text" name="name" id="name" autocomplete="off" 
+              placeholder="новая комната..." maxlength="29"></input>
+          <button type="submit">Добавить</button>
+        </form>
+      </div>
+
+      <div id="content">
+
+        <div id="messages">
+          <template id="message">
+            <div class="message">
+              <span class="username"></span>
+              <span class="text"></span>
+            </div>
+          </template>
+        </div>
+
+        <form id="new-message">
+          <input type="text" name="username" id="username" maxlength="19"
+            placeholder="guest" autocomplete="off">
+          <input type="text" name="message" id="message" autocomplete="off"
+              placeholder="Send a message..." autofocus>
+          <button type="submit" id="send">Отправить</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
